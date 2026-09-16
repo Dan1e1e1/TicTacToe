@@ -1,4 +1,6 @@
-
+//Daniel Michael 9/16/2026 Palindrome
+//This program reads in up to 80 characters and removes all spaces, all punctuation, and sets all the letters to lowercase.
+//Then it checks to see if the input is the same backwards as it is forwards and if it is, it will print "Palindrome" and if not it will print "Not a palindrome". 
 #include <iostream>
 #include <cstring>
 
@@ -44,7 +46,6 @@ int main()
     end--;
     //eventually the 2 variables will meet and the while loop will end.
   }
-  cout << str << '\n';
   int value = strcmp(str, str2);
   if (value == 0) {
     cout << "Palindrome";
