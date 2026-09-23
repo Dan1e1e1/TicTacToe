@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <cstring>
 
@@ -27,27 +28,34 @@ int main() {
   char game = true;
   int turn = 0;
   char turn1 = 'X';
-  while (game = true) {
+  while (game == true) {
     turn++;
     if (turn = 1) {
       turn1 = 'X';
     } else {
       turn1 = 'O';
     }
-    for (int i = 0; i < rows; i++) {
-      for (int j = 0; j < cols; j++) {
-  	  cout << board[i][j]; 
-        }
-      cout << "\n";
-      }
     char input;
     int input1;
+    cout << "Choose the letter a letter (a,b,c): ";
     cin >> input;
-    cout << input;
+    cout << "Choose a nmuber (1,2,3): ";
     cin >> input1;
-    cout << input1;
-    if (input = 'a' && input1 = 1) {
-      board[1][1] = turn1;
+    int con = true;
+    while (con == true) {
+      for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+          if (input == 'a') {
+            if (input1 == 1) {
+              board[1][1] = turn1;
+  	      cout << board[i][j];
+	      con = false;
+	    }
+	  }
+	}
+	//Formatting the printing so its in a 4x4
+	cout << "\n";
+      }
     }
   }
 }
