@@ -28,7 +28,7 @@ int main() {
     while (con == true) {
       for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
-	  char input;
+          char input;
 	  int input1;
 	  cout << "Choose the letter a letter (a,b,c): ";
 	  cin >> input;
