@@ -29,19 +29,19 @@ int main() {
       for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
           char input;
-	  int input1;
-	  cout << "Choose the letter a letter (a,b,c): ";
-	  cin >> input;
-	  cout << "Choose a nmuber (1,2,3): ";
-	  cin >> input1;
+          int input1;
+          cout << "Choose the letter a letter (a,b,c): ";
+          cin >> input;
+          cout << "Choose a nmuber (1,2,3): ";
+          cin >> input1;
 	  if (input == 'a') {
 	    if (input1 == 1) {
 	      if (board[1][1] == ' ') {
-		board[1][1] = turn1;
-		con = false;
+                board[1][1] = turn1;
+                con = false;
 	      } else {
-		cout << "fail";
-		con = false;
+                cout << "fail";
+                con = false;
 	      }
 	    }
 	      if (input1 == 2) {
