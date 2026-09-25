@@ -34,11 +34,10 @@ int main() {
 	  cin >> input;
 	  cout << "Choose a nmuber (1,2,3): ";
 	  cin >> input1;
-
 	  if (input == 'a') {
-            if (input1 == 1) {
+	    if (input1 == 1) {
 	      if (board[1][1] == ' ') {
-                board[1][1] = turn1;
+		board[1][1] = turn1;
 		con = false;
 	      } else {
 		cout << "fail";
