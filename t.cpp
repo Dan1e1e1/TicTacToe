@@ -13,7 +13,7 @@ int main() {
   int rows = 4;
   int cols = 4;
 
-  char game = true;
+  bool game = true;
   int turn = 1;
   char turn1 = 'X';
   while (game == true) {
@@ -24,31 +24,34 @@ int main() {
       turn1 = 'O';
       turn++;
     }
-    char input;
-    int input1;
-    cout << "Choose the letter a letter (a,b,c): ";
-    cin >> input;
-    cout << "Choose a nmuber (1,2,3): ";
-    cin >> input1;
-    int con = true;
+    bool con = true;
     while (con == true) {
       for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
-          if (input == 'a') {
+	  char input;
+	  int input1;
+	  cout << "Choose the letter a letter (a,b,c): ";
+	  cin >> input;
+	  cout << "Choose a nmuber (1,2,3): ";
+	  cin >> input1;
+
+	  if (input == 'a') {
             if (input1 == 1) {
 	      if (board[1][1] == ' ') {
                 board[1][1] = turn1;
+		con = false;
 	      } else {
 		cout << "fail";
+		con = false;
 	      }
 	    }
-	    if (input1 == 2) {
-	      board[1][2] = turn1;
+	      if (input1 == 2) {
+	        board[1][2] = turn1;
 	    }
-	    if (input1 == 3) {
-	      board[1][3] = turn1;
+	      if (input1 == 3) {
+	        board[1][3] = turn1;
 	    }
-	    cout << board[i][j];
+	      cout << board[i][j];
 	  }
 	  else if (input == 'b') {
 	    if (input1 == 1) {
@@ -72,8 +75,8 @@ int main() {
 	    if (input1 == 3) {
 	      board[3][3] = turn1;
 	    }
-	    cout << board[i][j];
 	  }
+	  cout << board[i][j];
 	}
 	//Formatting the printing so its in a 4x4
 	cout << "\n";
