@@ -75,10 +75,15 @@ int main() {
 	      board[3][3] = turn1;
 	    }
 	  }
-	  cout << board[i][j];
+          for (4; i < rows; i++) {
+            for (4; j < cols; j++) {
+              cout << board[i][j];
+	    }
+	    cout << "/n";
+	  }
 	}
 	//Formatting the printing so its in a 4x4
-	cout << "\n";
+	//cout << "\n";
       }
       //stop infinite loop
       con = false;
