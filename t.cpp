@@ -74,7 +74,7 @@ int main() {
 	    if (input1 == 3) {
 	      board[3][3] = turn1;
 	    }
-	  }
+          }
           for (4; i < rows; i++) {
             for (4; j < cols; j++) {
               cout << board[i][j];
