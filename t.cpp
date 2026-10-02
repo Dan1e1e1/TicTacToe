@@ -67,7 +67,13 @@ int main() {
           int input1;
           cout << "Choose the letter a letter (a,b,c): ";
           cin >> input;
-          cout << "Choose a nmuber (1,2,3): ";
+		  //make sure the input is a or b or c to make sure that you dont skip a turn.
+	      while (input != 'a' && input != 'b' && input != 'c') {
+			cout << "Choose a valid letter a - b - c \n";
+			cout << "Choose a letter(a, b, c): ";
+			cin >> input;
+		  }
+          cout << "Choose a number (1,2,3): ";
           cin >> input1;
 		  //make sure the input is between 1 and 3 to make sure you dont skip a turn.
 	      while (input1 < 1 || input1 > 3) {
