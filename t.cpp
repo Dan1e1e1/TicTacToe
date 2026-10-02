@@ -27,15 +27,29 @@ int x_win(int &x_points, bool &game, char (&board)[4][4]) {
     game = false;
   } else {
     cout << "lets play again";
-    char board[4][4] = {
-      {' ', '1', '2', '3'},
-      {'a', ' ' , ' ', ' '},
-      {'b', ' ', ' ', ' '},
-      {'c', ' ', ' ', ' '}
-    };
+
+	board[0][0] = ' ';
+	board[0][1] = '1';
+	board[0][2] = '2';
+	board[0][3] = '3';
+
+	board[1][0] = 'a';
+	board[1][1] = ' ';
+	board[1][2] = ' ';
+	board[1][3] = ' ';
+
+    board[2][0] = 'b';
+	board[2][1] = ' ';
+	board[2][2] = ' ';
+	board[2][3] = ' ';
+
+	board[3][0] = 'c';
+	board[3][1] = ' ';
+	board[3][2] = ' ';
+	board[3][3] = ' ';
 
   }
-  return x_points, game, board[4][4];
+  return x_points;
 }
 int main() {
   char board[4][4] = {
