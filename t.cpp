@@ -48,6 +48,7 @@ int main() {
   int cols = 4;
   
   bool game = true;
+  int times = 0;
   int turn = 1;
   int x_points = 0;
   char turn1 = 'X';
@@ -86,6 +87,7 @@ int main() {
             if (input1 == 1) {
               if (board[1][1] == ' ') {
                 board[1][1] = turn1;
+				times++;
               } else {
     	        cout << "fail";
                 reset_turn(turn);
@@ -94,6 +96,7 @@ int main() {
             if (input1 == 2) {
               if (board[1][2] == ' ') {
                 board[1][2] = turn1;
+				times++;
               } else {
                 cout << "fail";
                 reset_turn(turn);
@@ -102,6 +105,7 @@ int main() {
             if (input1 == 3) {
               if (board[1][3] == ' ') {
                 board[1][3] = turn1;
+				times++;
               } else {
                 cout << "fail";
                 reset_turn(turn);
@@ -112,6 +116,7 @@ int main() {
 	    if (input1 == 1) {
 	      if (board[2][1] == ' ') {
 	        board[2][1] = turn1;
+			times++;
 	      } else {
 		cout << "fail";
 		reset_turn(turn);
@@ -120,6 +125,7 @@ int main() {
 	    if (input1 == 2) {
 	      if (board[2][2] == ' ') {
 	        board[2][2] = turn1;
+			times++;
 	      } else {
 		cout << "fail";
 		reset_turn(turn);
@@ -128,6 +134,7 @@ int main() {
 	    if (input1 == 3) {
 	      if (board[2][3] == ' ') {
 	        board[2][3] = turn1;
+			times++;
 	      } else {
 		cout << "fail";
 		reset_turn(turn);
@@ -138,6 +145,7 @@ int main() {
 	    if (input1 == 1) {
 	      if (board[3][1] == ' ') {
 	        board[3][1] = turn1;
+			times++;
 	      } else {
 		cout << "fail";
 		reset_turn(turn);
@@ -146,6 +154,7 @@ int main() {
 	    if (input1 == 2) {
 	      if (board[3][2] == ' ') {
 	        board[3][2] = turn1;
+			times++;
 	      } else {
 		cout << "fail";
 		reset_turn(turn);
@@ -154,6 +163,7 @@ int main() {
 	    if (input1 == 3) {
 	      if (board[3][3] == ' ') {
 	        board[3][3] = turn1;
+			times++;
 	      } else {
 		cout << "fail";
 		reset_turn(turn);
@@ -169,6 +179,10 @@ int main() {
 	}
       }
       //eventual win conditions
+    if (times >= 9) {
+		cout << "tie";
+		game = false;
+	}
 	bool run_once = true;
 	for (int i = 0; i < rows; i++) {
 	  for (int j = 0; j < cols; j++) {
