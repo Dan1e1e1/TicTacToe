@@ -13,21 +13,7 @@ int reset_turn(int &turn) {
   }
   return turn;
 }
-
-
-int x_win(int &x_points, bool &game, char (&board)[4][4]) {
-  cout << "X wins!";
-  cout << "\n";
-  x_points++;
-  cout << "X has " << x_points << " points" << "\n";
-  cout << "do you want to play again?(y, n)" << "\n";
-  char again;
-  cin >> again;
-  if (again == 'n') {
-    game = false;
-  } else {
-    cout << "lets play again";
-
+int reset(char (&board)[4][4], int &times, int &turn) {
 	board[0][0] = ' ';
 	board[0][1] = '1';
 	board[0][2] = '2';
@@ -47,6 +33,25 @@ int x_win(int &x_points, bool &game, char (&board)[4][4]) {
 	board[3][1] = ' ';
 	board[3][2] = ' ';
 	board[3][3] = ' ';
+
+	times = 0;
+	turn = 1;
+	return times;
+}
+
+int x_win(int &x_points, bool &game, char (&board)[4][4]) {
+  cout << "X wins!";
+  cout << "\n";
+  x_points++;
+  cout << "X has " << x_points << " points" << "\n";
+  cout << "do you want to play again?(y, n)" << "\n";
+  char again;
+  cin >> again;
+  if (again == 'n') {
+    game = false;
+  } else {
+    cout << "lets play again";
+	reset((board)[4][4], times, turn)
 
   }
   return x_points;
