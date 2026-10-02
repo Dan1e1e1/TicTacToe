@@ -36,10 +36,10 @@ int reset(char (&board)[4][4], int &times, int &turn) {
 
 	times = 0;
 	turn = 1;
-	return times;
+	return times, turn;
 }
 
-int x_win(int &x_points, bool &game, char (&board)[4][4]) {
+int x_win(int &x_points, bool &game, char (&board)[4][4], int &times, int &turn) {
   cout << "X wins!";
   cout << "\n";
   x_points++;
@@ -209,32 +209,32 @@ int main() {
 	      //Horizontal
 	      if (board[1][1] == 'X' && board[1][2] == 'X' && board[1][3] == 'X') {
 		run_once = false;
-		x_win(x_points, game, board);
+		x_win(x_points, game, board, times, turn);
 	      } else if (board[2][1] == 'X' && board[2][2] == 'X' && board[2][3] == 'X') {
 	        run_once = false;
-		x_win(x_points, game, board);
+		x_win(x_points, game, board, times, turn);
 	      } else if (board[3][1] == 'X' && board[3][2] == 'X' && board[3][3] == 'X') {
 		run_once = false;
-		x_win(x_points, game, board);
+		x_win(x_points, game, board, times, turn);
 	      }
 	    //Vertial
 	      if (board[1][1] == 'X' && board[2][1] == 'X' && board[3][1] == 'X') {
                 run_once = false;
-		x_win(x_points, game, board);
+		x_win(x_points, game, board, times, turn);
               } else if (board[1][2] == 'X' && board[2][2] == 'X' && board[3][2] == 'X') {
                 run_once = false;
-		x_win(x_points, game, board);
+		x_win(x_points, game, board, times, turn);
               } else if (board[1][3] == 'X' && board[2][3] == 'X' && board[3][3] == 'X') {
                 run_once = false;
-		x_win(x_points, game, board);
+		x_win(x_points, game, board, times, turn);
               }
 	    //Diagonals
 	      if (board[1][1] == 'X' && board[2][2] == 'X' && board[3][3] == 'X') {
                 run_once = false;
-		x_win(x_points, game, board);
+		x_win(x_points, game, board, times, turn);
               } else if (board[3][1] == 'X' && board[2][2] == 'X' && board[1][3] == 'X') {
                 run_once = false;
-		x_win(x_points, game, board);
+		x_win(x_points, game, board, times, turn);
               }
 	    }
 
