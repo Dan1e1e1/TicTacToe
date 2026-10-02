@@ -69,6 +69,13 @@ int main() {
           cin >> input;
           cout << "Choose a nmuber (1,2,3): ";
           cin >> input1;
+		  //make sure the input is between 1 and 3 to make sure you dont skip a turn.
+	      while (input1 < 1 || input1 > 3) {
+		    cout << "That was not a valid number, choose a number between 1 and 3 \n";
+		    cout << "Choose a number (1, 2, 3): ";
+		    cin >> input1;
+          } 
+
           if (input == 'a') {
             if (input1 == 1) {
               if (board[1][1] == ' ') {
