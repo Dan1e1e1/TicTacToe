@@ -202,8 +202,16 @@ int main() {
       //eventual win conditions
     if (times >= 9) {
 		if (won == false) {
-		  cout << "tie";
-		  game = false;
+		  cout << "tie \n";
+		  cout << "do you want to play again?(y, n)" << "\n";
+  	 	  char again;
+ 		  cin >> again;
+  		  if (again == 'n') {
+             game = false;
+  		  } else {
+   		    cout << "lets play again \n";
+			reset(board, times, turn, won);
+		  }
 		}
 	}
 	bool run_once = true;
