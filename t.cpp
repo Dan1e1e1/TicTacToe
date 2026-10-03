@@ -40,27 +40,29 @@ int reset(char (&board)[4][4], int &times, int &turn, bool &won) {
 	return times, turn, won;
 }
 
-int x_win(int &x_points, bool &game, char (&board)[4][4], int &times, int &turn, bool &won) {
+int x_win(int &x_points, int o_points, bool &game, char (&board)[4][4], int &times, int &turn, bool &won) {
   cout << "X wins!";
   cout << "\n";
   x_points++;
   cout << "X has " << x_points << " points" << "\n";
+  cout << "O has " << o_points << " points \n";
   cout << "do you want to play again?(y, n)" << "\n";
   char again;
   cin >> again;
   if (again == 'n') {
     game = false;
   } else {
-    cout << "lets play again";
+    cout << "lets play again \n";
 	reset(board, times, turn, won);
 
   }
   return x_points;
 }
-int o_win(int &o_points, bool &game, char (&board)[4][4], int &times, int &turn, bool &won) {
+int o_win(int &o_points, int x_points, bool &game, char (&board)[4][4], int &times, int &turn, bool &won) {
   cout << "O wins!";
   cout << "\n";
   o_points++;
+  cout << "X has "  << x_points << " points \n" ;
   cout << "O has " << o_points << " points" << "\n";
   cout << "do you want to play again?(y, n)" << "\n";
   char again;
@@ -105,7 +107,7 @@ int main() {
         for (int j = 0; j < cols; j++) {
           char input;
           int input1;
-          cout << "Choose the letter (a,b,c): ";
+          cout << "Choose a letter (a,b,c): ";
           cin >> input;
 		  //make sure the input is a or b or c to make sure that you dont skip a turn.
 	      while (input != 'a' && input != 'b' && input != 'c') {
@@ -217,10 +219,12 @@ int main() {
 	    	cout << "\n";
 	}
       }
-      //eventual win conditions
+    //Ties
     if (times >= 9) {
 		if (won == false) {
 		  cout << "tie \n";
+		  cout << "X has "  << x_points << " points \n" ;
+		  cout << "O has " << o_points << " points \n";
 		  cout << "do you want to play again?(y, n)" << "\n";
   	 	  char again;
  		  cin >> again;
@@ -239,39 +243,39 @@ int main() {
 	      //Horizontal
 	      if (board[1][1] == 'X' && board[1][2] == 'X' && board[1][3] == 'X') {
 		run_once = false;
-		x_win(x_points, game, board, times, turn, won);
+		x_win(x_points, o_points, game, board, times, turn, won);
 		     won = true;
 	      } else if (board[2][1] == 'X' && board[2][2] == 'X' && board[2][3] == 'X') {
 	        run_once = false;
-		x_win(x_points, game, board, times, turn, won);
+		x_win(x_points, o_points, game, board, times, turn, won);
 			  won = true;
 	      } else if (board[3][1] == 'X' && board[3][2] == 'X' && board[3][3] == 'X') {
 		run_once = false;
-		x_win(x_points, game, board, times, turn, won);
+		x_win(x_points, o_points, game, board, times, turn, won);
 			  won = true;
 	      }
 	    //Vertial
 	      if (board[1][1] == 'X' && board[2][1] == 'X' && board[3][1] == 'X') {
                 run_once = false;
-		x_win(x_points, game, board, times, turn, won);
+		x_win(x_points, o_points, game, board, times, turn, won);
 			  won = true;
               } else if (board[1][2] == 'X' && board[2][2] == 'X' && board[3][2] == 'X') {
                 run_once = false;
-		x_win(x_points, game, board, times, turn, won);
+		x_win(x_points, o_points, game, board, times, turn, won);
 			  won = true;
               } else if (board[1][3] == 'X' && board[2][3] == 'X' && board[3][3] == 'X') {
                 run_once = false;
-		x_win(x_points, game, board, times, turn, won);
+		x_win(x_points, o_points, game, board, times, turn, won);
 			  won = true;
               }
 	    //Diagonals
 	      if (board[1][1] == 'X' && board[2][2] == 'X' && board[3][3] == 'X') {
                 run_once = false;
-		x_win(x_points, game, board, times, turn, won);
+		x_win(x_points, o_points, game, board, times, turn, won);
 			  won = true;
               } else if (board[3][1] == 'X' && board[2][2] == 'X' && board[1][3] == 'X') {
                 run_once = false;
-		x_win(x_points, game, board, times, turn, won);
+		x_win(x_points, o_points, game, board, times, turn, won);
 			  won = true;
               }
 	    }
@@ -279,39 +283,39 @@ int main() {
 	      //Horizontal
 	      if (board[1][1] == 'O' && board[1][2] == 'O' && board[1][3] == 'O') {
 		run_once = false;
-		o_win(o_points, game, board, times, turn, won);
+		o_win(o_points, x_points, game, board, times, turn, won);
 		     won = true;
 	      } else if (board[2][1] == 'O' && board[2][2] == 'O' && board[2][3] == 'O') {
 	        run_once = false;
-		o_win(o_points, game, board, times, turn, won);
+		o_win(o_points, x_points, game, board, times, turn, won);
 			  won = true;
 	      } else if (board[3][1] == 'O' && board[3][2] == 'O' && board[3][3] == 'O') {
 		run_once = false;
-		o_win(o_points, game, board, times, turn, won);
+		o_win(o_points, x_points, game, board, times, turn, won);
 			  won = true;
 	      }
 	    //Vertial
 	      if (board[1][1] == 'O' && board[2][1] == 'O' && board[3][1] == 'O') {
                 run_once = false;
-		o_win(o_points, game, board, times, turn, won);
+		o_win(o_points, x_points, game, board, times, turn, won);
 			  won = true;
               } else if (board[1][2] == 'O' && board[2][2] == 'O' && board[3][2] == 'O') {
                 run_once = false;
-		o_win(o_points, game, board, times, turn, won);
+		o_win(o_points, x_points, game, board, times, turn, won);
 			  won = true;
               } else if (board[1][3] == 'O' && board[2][3] == 'O' && board[3][3] == 'O') {
                 run_once = false;
-		o_win(o_points, game, board, times, turn, won);
+		o_win(o_points, x_points, game, board, times, turn, won);
 			  won = true;
               }
 	    //Diagonals
 	      if (board[1][1] == 'O' && board[2][2] == 'O' && board[3][3] == 'O') {
                 run_once = false;
-		o_win(o_points, game, board, times, turn, won);
+		o_win(o_points, x_points, game, board, times, turn, won);
 			  won = true;
               } else if (board[3][1] == 'O' && board[2][2] == 'O' && board[1][3] == 'O') {
                 run_once = false;
-		o_win(o_points, game, board, times, turn, won);
+		o_win(o_points, x_points, game, board, times, turn, won);
 			  won = true;
               }
 	    }
