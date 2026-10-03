@@ -133,7 +133,7 @@ int main() {
                 board[1][1] = turn1;
 				times++;
               } else {
-    	        cout << "fail";
+    	        cout << "Try again that was invalid";
                 reset_turn(turn);
 	        }
 	      }
@@ -142,7 +142,7 @@ int main() {
                 board[1][2] = turn1;
 				times++;
               } else {
-                cout << "fail";
+                cout << "Try again that was invalid";
                 reset_turn(turn);
 	        }
 	      }
@@ -151,7 +151,7 @@ int main() {
                 board[1][3] = turn1;
 				times++;
               } else {
-                cout << "fail";
+                cout << "Try again that was invalid";
                 reset_turn(turn);
                 }
               }
@@ -162,7 +162,7 @@ int main() {
 	        board[2][1] = turn1;
 			times++;
 	      } else {
-		cout << "fail";
+		cout << "Try again that was invalid";
 		reset_turn(turn);
 	        }
 	      }
@@ -171,7 +171,7 @@ int main() {
 	        board[2][2] = turn1;
 			times++;
 	      } else {
-		cout << "fail";
+		cout << "Try again that was invalid";
 		reset_turn(turn);
 	        }
 	      }
@@ -180,7 +180,7 @@ int main() {
 	        board[2][3] = turn1;
 			times++;
 	      } else {
-		cout << "fail";
+		cout << "Try again that was invalid";
 		reset_turn(turn);
 	      }
 	    }
@@ -191,7 +191,7 @@ int main() {
 	        board[3][1] = turn1;
 			times++;
 	      } else {
-		cout << "fail";
+		cout << "Try again that was invalid";
 		reset_turn(turn);
 	        }
 	      }
@@ -200,7 +200,7 @@ int main() {
 	        board[3][2] = turn1;
 			times++;
 	      } else {
-		cout << "fail";
+		cout << "Try again that was invalid";
 		reset_turn(turn);
 	        }
 	      }
@@ -209,7 +209,7 @@ int main() {
 	        board[3][3] = turn1;
 			times++;
 	      } else {
-		cout << "fail";
+		cout << "Try again that was invalid";
 		reset_turn(turn);
 	        }
 	      }
