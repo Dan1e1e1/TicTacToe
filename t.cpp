@@ -13,7 +13,7 @@ int reset_turn(int &turn) {
   }
   return turn;
 }
-int reset(char (&board)[4][4], int &times, int &turn) {
+int reset(char (&board)[4][4], int &times, int &turn, bool &won) {
 	board[0][0] = ' ';
 	board[0][1] = '1';
 	board[0][2] = '2';
@@ -36,10 +36,11 @@ int reset(char (&board)[4][4], int &times, int &turn) {
 
 	times = 0;
 	turn = 1;
-	return times, turn;
+	won = false;
+	return times, turn, won;
 }
 
-int x_win(int &x_points, bool &game, char (&board)[4][4], int &times, int &turn) {
+int x_win(int &x_points, bool &game, char (&board)[4][4], int &times, int &turn, bool &won) {
   cout << "X wins!";
   cout << "\n";
   x_points++;
@@ -51,7 +52,7 @@ int x_win(int &x_points, bool &game, char (&board)[4][4], int &times, int &turn)
     game = false;
   } else {
     cout << "lets play again";
-	reset(board, times, turn);
+	reset(board, times, turn, won);
 
   }
   return x_points;
@@ -71,6 +72,7 @@ int main() {
   int turn = 1;
   int x_points = 0;
   char turn1 = 'X';
+  bool won = false;
   while (game == true) {
     if (turn == 1) {
       turn1 = 'X';
@@ -199,8 +201,10 @@ int main() {
       }
       //eventual win conditions
     if (times >= 9) {
-		cout << "tie";
-		game = false;
+		if (won == true) {
+		  cout << "tie";
+		  game = false;
+		}
 	}
 	bool run_once = true;
 	for (int i = 0; i < rows; i++) {
@@ -209,32 +213,40 @@ int main() {
 	      //Horizontal
 	      if (board[1][1] == 'X' && board[1][2] == 'X' && board[1][3] == 'X') {
 		run_once = false;
-		x_win(x_points, game, board, times, turn);
+		x_win(x_points, game, board, times, turn, won);
+		     won = true;
 	      } else if (board[2][1] == 'X' && board[2][2] == 'X' && board[2][3] == 'X') {
 	        run_once = false;
-		x_win(x_points, game, board, times, turn);
+		x_win(x_points, game, board, times, turn, won);
+			  won = true;
 	      } else if (board[3][1] == 'X' && board[3][2] == 'X' && board[3][3] == 'X') {
 		run_once = false;
-		x_win(x_points, game, board, times, turn);
+		x_win(x_points, game, board, times, turn, won);
+			  won = true;
 	      }
 	    //Vertial
 	      if (board[1][1] == 'X' && board[2][1] == 'X' && board[3][1] == 'X') {
                 run_once = false;
-		x_win(x_points, game, board, times, turn);
+		x_win(x_points, game, board, times, turn, won);
+			  won = true;
               } else if (board[1][2] == 'X' && board[2][2] == 'X' && board[3][2] == 'X') {
                 run_once = false;
-		x_win(x_points, game, board, times, turn);
+		x_win(x_points, game, board, times, turn, won);
+			  won = true;
               } else if (board[1][3] == 'X' && board[2][3] == 'X' && board[3][3] == 'X') {
                 run_once = false;
-		x_win(x_points, game, board, times, turn);
+		x_win(x_points, game, board, times, turn, won);
+			  won = true;
               }
 	    //Diagonals
 	      if (board[1][1] == 'X' && board[2][2] == 'X' && board[3][3] == 'X') {
                 run_once = false;
-		x_win(x_points, game, board, times, turn);
+		x_win(x_points, game, board, times, turn, won);
+			  won = true;
               } else if (board[3][1] == 'X' && board[2][2] == 'X' && board[1][3] == 'X') {
                 run_once = false;
-		x_win(x_points, game, board, times, turn);
+		x_win(x_points, game, board, times, turn, won);
+			  won = true;
               }
 	    }
 
