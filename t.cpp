@@ -201,7 +201,7 @@ int main() {
       }
       //eventual win conditions
     if (times >= 9) {
-		if (won == true) {
+		if (won == false) {
 		  cout << "tie";
 		  game = false;
 		}
