@@ -51,7 +51,7 @@ int x_win(int &x_points, bool &game, char (&board)[4][4], int &times, int &turn)
     game = false;
   } else {
     cout << "lets play again";
-	reset((board)[4][4], times, turn)
+	reset(board, times, turn);
 
   }
   return x_points;
@@ -190,8 +190,8 @@ int main() {
 	      }
           }
 	  //printing board
-          for (i = 0; i < rows; i++) {
-            for (j = 0; j < cols; j++) {
+          for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
               cout << board[i][j];
 	    	}
 	    	cout << "\n";
