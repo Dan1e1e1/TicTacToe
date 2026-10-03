@@ -190,8 +190,8 @@ int main() {
 	      }
           }
 	  //printing board
-          for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
+          for (i = 0; i < rows; i++) {
+            for (j = 0; j < cols; j++) {
               cout << board[i][j];
 	    	}
 	    	cout << "\n";
