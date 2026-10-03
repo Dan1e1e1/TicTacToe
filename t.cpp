@@ -281,37 +281,37 @@ int main() {
 		run_once = false;
 		o_win(o_points, game, board, times, turn, won);
 		     won = true;
-	      } else if (board[2][1] == 'X' && board[2][2] == 'X' && board[2][3] == 'X') {
+	      } else if (board[2][1] == 'O' && board[2][2] == 'O' && board[2][3] == 'O') {
 	        run_once = false;
-		x_win(x_points, game, board, times, turn, won);
+		o_win(o_points, game, board, times, turn, won);
 			  won = true;
-	      } else if (board[3][1] == 'X' && board[3][2] == 'X' && board[3][3] == 'X') {
+	      } else if (board[3][1] == 'O' && board[3][2] == 'O' && board[3][3] == 'O') {
 		run_once = false;
-		x_win(x_points, game, board, times, turn, won);
+		o_win(o_points, game, board, times, turn, won);
 			  won = true;
 	      }
 	    //Vertial
-	      if (board[1][1] == 'X' && board[2][1] == 'X' && board[3][1] == 'X') {
+	      if (board[1][1] == 'O' && board[2][1] == 'O' && board[3][1] == 'O') {
                 run_once = false;
-		x_win(x_points, game, board, times, turn, won);
+		o_win(o_points, game, board, times, turn, won);
 			  won = true;
-              } else if (board[1][2] == 'X' && board[2][2] == 'X' && board[3][2] == 'X') {
+              } else if (board[1][2] == 'O' && board[2][2] == 'O' && board[3][2] == 'O') {
                 run_once = false;
-		x_win(x_points, game, board, times, turn, won);
+		o_win(o_points, game, board, times, turn, won);
 			  won = true;
-              } else if (board[1][3] == 'X' && board[2][3] == 'X' && board[3][3] == 'X') {
+              } else if (board[1][3] == 'O' && board[2][3] == 'O' && board[3][3] == 'O') {
                 run_once = false;
-		x_win(x_points, game, board, times, turn, won);
+		o_win(o_points, game, board, times, turn, won);
 			  won = true;
               }
 	    //Diagonals
-	      if (board[1][1] == 'X' && board[2][2] == 'X' && board[3][3] == 'X') {
+	      if (board[1][1] == 'O' && board[2][2] == 'O' && board[3][3] == 'O') {
                 run_once = false;
-		x_win(x_points, game, board, times, turn, won);
+		o_win(o_points, game, board, times, turn, won);
 			  won = true;
-              } else if (board[3][1] == 'X' && board[2][2] == 'X' && board[1][3] == 'X') {
+              } else if (board[3][1] == 'O' && board[2][2] == 'O' && board[1][3] == 'O') {
                 run_once = false;
-		x_win(x_points, game, board, times, turn, won);
+		o_win(o_points, game, board, times, turn, won);
 			  won = true;
               }
 	    }
