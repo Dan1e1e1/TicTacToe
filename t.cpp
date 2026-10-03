@@ -1,4 +1,7 @@
-
+//Daniel Michael 10/2/26 Tic Tac Toe
+//This program allows the user to play tic tac toe by entering a letter and then a number that corresponds to the postion they want.
+//This program keeps track of how many wins each player has and accounts for ties. When the game ends, the user will be asked if they
+//want to play again, and if they do, the board will reset and they can play a new game.
 #include <iostream>
 #include <cstring>
 
@@ -236,6 +239,7 @@ int main() {
 		  }
 		}
 	}
+	//make sure that when you win you only get 1 point.
 	bool run_once = true;
 	for (int i = 0; i < rows; i++) {
 	  for (int j = 0; j < cols; j++) {
